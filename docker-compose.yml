@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD: admin
+  phpMyAdmin:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      - PMA_ARBITARY: 1
+    ports:
+      - "8080:80"
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
